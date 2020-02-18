@@ -1,0 +1,14 @@
+<h1>My Tasks</h1>
+
+
+<% @tasks.each do |task| %>
+<span><%= task.completed ? "✔" : "☐" %><%= link_to task.title, task_path(task.id)%> </span>
+<br>
+<i class="fas fa-trash-alt">
+<%= link_to "Delete", task_path(task), method: :delete %>
+<% end %>
+
+<br>
+
+<%= link_to "+ A new task", task_new_path %>
+
